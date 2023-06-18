@@ -1,0 +1,8 @@
+.landing{
+	height: 100vh;
+	background-image: url("../../assets//landing.gif");
+	width: 100vw;
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

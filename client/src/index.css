@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Pixel', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('./assets/Poke.ttf') format('truetype');
+}
+
+
+*{
+  font-family: 'Pixel', sans-serif;
+  font-size: 0.8rem;
+}
