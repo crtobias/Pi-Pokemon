@@ -21,18 +21,18 @@ const Ordenator = ({ setPage }) => {
 
 
   return (
-    <div className='sort'>
+    <div class='sort'>
       {searchPoke.length > 1 && <button name='aToZ' onClick={handleFilter} className='button-ordenator'>&#10607; A-Z</button>}
       {searchPoke.length > 1 && <button name='zToA' onClick={handleFilter} className='button-ordenator'>&#10607; Z-A</button>}
-      {searchPoke.length > 1 && <button name="attackDesc" onClick={handleFilter} className='button-ordenator'>&#8643; ATTACK</button>}
-      {searchPoke.length > 1 && <button name="attackAsc" onClick={handleFilter} className='button-ordenator'>&#8639; ATTACK</button>}
+      {searchPoke.length > 1 && <button name="attackDesc" onClick={handleFilter} className='button-ordenator'>- ATTACK</button>}
+      {searchPoke.length > 1 && <button name="attackAsc" onClick={handleFilter} className='button-ordenator'>+ ATTACK</button>}
       {searchPoke.length > 1 && (
         <button
           name="numeric"
           onClick={handleOriginFilter}
           className="button-ordenator"
         >
-          Api
+          Pokemones Originales
         </button>
       )}
       {searchPoke.length > 1 && (
@@ -41,7 +41,7 @@ const Ordenator = ({ setPage }) => {
           onClick={handleOriginFilter}
           className="button-ordenator"
         >
-          DATAbase
+          Pokemones Creados
         </button>
       )}
     </div>
@@ -49,3 +49,4 @@ const Ordenator = ({ setPage }) => {
 }
 
 export default Ordenator;
+

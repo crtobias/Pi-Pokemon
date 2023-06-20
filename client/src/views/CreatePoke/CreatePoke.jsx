@@ -178,9 +178,9 @@ const initialPoke = {
   weight: "",
   types: []
 }
-
-function CreatePoke() {
-  const types = useSelector(state => state.types);
+console.log(initialPoke);
+function CreatePoke() {                            
+  const types = useSelector(state => state.types);     
   const [input, setInput] = useState(initialPoke);
   const [disabler, setDisabler] = useState(true);
   const [errors, setErrors] = useState({});
@@ -206,7 +206,7 @@ function CreatePoke() {
     console.log(errors);
   }, [errors]);
 
-  const handleChangeTypes = (e) => {
+  const handleChangeTypes = (e) => {                            //
     const type = JSON.parse(e.target.value);
     if (input.types.includes(type)) {
       setInput({
@@ -216,7 +216,7 @@ function CreatePoke() {
       setErrors(
         validationPoke({
           ...input,
-          types: [...input.types.filter((t) => t !== type)]
+          types: [...input.types.filter((t) => t !== type)]           //setea los tipos
         })
       );
     } else {
@@ -231,12 +231,12 @@ function CreatePoke() {
         })
       );
     }
-  }
+  }                                                                //
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!Object.entries(errors).length) {
-      const response = await axios.post("http://localhost:3001/pokemons", input);
+      const response = await axios.post("http://localhost:3001/pokemons", input);   // hace el post con toda la info de initial poke
       if (response.data.message === 'Pokemon successfully created') {
         navigate(`/details/${response.data.new_pokemon.id}`);
       }
@@ -251,7 +251,7 @@ function CreatePoke() {
     <div>
       <form onSubmit={handleSubmit} className="form-create">
         <div>
-          <img src="https://pm1.narvii.com/5762/3f38ecfb4a23493049ca4ec365b17e74287d5e1d_hq.jpg" alt="poke" className="img-poke" />
+          <img src="https://es-static.z-dn.net/files/dc9/78ac3c106941398a18ca7ef16ff38d39.png" alt="poke" className="img-poke" />
         </div>
         <div>
           <label> Name</label>

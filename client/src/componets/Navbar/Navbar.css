@@ -1,15 +1,18 @@
 
 
-.nav-bar{
-    background-image: url("../../assets/nacbar.png");
+.nav-bars{
+    background-color: rgba(0, 0, 0, 0.552);
+    background-image: url("../../assets/navbar.png");
     max-width: 300px;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 0px 20px 1px rgba(255,255,255,1);
     align-items: center;
+    background-size: 100% 100%;
 }
-
+.buttonss:hover{
+    background-color: cyan;
+}
 
 .Home-wrapper{
     display: flex;
@@ -21,18 +24,22 @@
     color: rgb(0, 0, 0);
     padding: 5px;
     margin: 3px;
+    
+    height: 2rem;
+    background-image: url("../../assets/botones.png");
+    background-size: 100% 100%;
+    border: thin transparent;
 }
 
 .button:hover {
     cursor: pointer;
     color: white;
-    background-color: #3B4CCA;
+     
+    box-shadow: 3px 3px 1px rgb(54, 157, 38);
 }
 
 .input-search {
-    margin-top: 10vh;
-    height: 30px;
-    border-radius: 5px;
+    width: 8rem;
 }
 
 .button-container {
@@ -41,4 +48,29 @@
 .types{
     margin-top: 3rem;
     margin: 3px;
+}
+
+.searchabrnashe{
+    margin-top: 8rem;
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 10px;
+grid-row-gap: 0px; 
+}
+
+.buttonss{
+
+    height: 2rem;
+    background-image: url("../../assets/botones.png");
+    background-size: 100% 100%;
+    border: thin transparent;
+}
+
+.buttonss:hover{
+    
+    cursor: pointer;
+    color: white;
+     
+    box-shadow: 3px 3px 1px rgb(54, 157, 38);
 }

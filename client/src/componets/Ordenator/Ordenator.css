@@ -1,0 +1,29 @@
+.button-ordenator{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    
+    height: 3rem;
+    background-image: url("../../assets/botones.png");
+    background-size: 100% 100%;
+    border: thin transparent;
+    
+}
+
+.sort{
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
+}
+
+
+
+.button-ordenator:hover{
+    
+    cursor: pointer;
+    color: white;
+     
+    box-shadow: 3px 3px 1px rgb(54, 157, 38);
+}

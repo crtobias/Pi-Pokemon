@@ -1,0 +1,29 @@
+.type-container{
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(10, 1fr);
+grid-column-gap: 5px;
+grid-row-gap: 5px; 
+margin: 10px;
+}
+
+
+.button-type{
+    height: 2rem;
+    background-image: url("../../assets/botones.png");
+    background-size: 100% 100%;
+    border: thin transparent;
+}
+
+
+.button-type:hover{
+    cursor: pointer;
+    color: white;
+     
+    box-shadow: 3px 3px 1px rgb(54, 157, 38);
+}
+
+.filtersxd{
+    font-size: large ;
+    margin-left: 1rem;
+}

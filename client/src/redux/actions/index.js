@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useHistory } from 'react-router-dom';
 
 export const GET_POKEMONS = "GET_POKEMONS";
 export const GET_BY_NAME = "GET_BY_NAME";
@@ -20,25 +21,64 @@ export function getPokemons() {
   };
 }
 
+// export function getByname(name) {
+//   return async function (dispatch) {
+//     const response = await axios(`http://localhost:3001/pokemons?name=${name}`); //respuesta del llamado a la api por nombre
+//     return dispatch({
+//       type: "GET_BY_NAME", // el tipo GET
+//       payload: response.data, //repuesta del llamado todo los POKEMON
+//     });
+//   };
+// }
 export function getByname(name) {
   return async function (dispatch) {
-    const response = await axios(`http://localhost:3001/pokemons?name=${name}`); //respuesta del llamado a la api por nombre
-    return dispatch({
-      type: "GET_BY_NAME", // el tipo GET
-      payload: response.data, //repuesta del llamado todo los POKEMON
-    });
+    try {
+      const response = await axios(`http://localhost:3001/pokemons?name=${name}`);
+      
+      if (response.data.length === 0) {
+        return {
+          type: "POKEMON_NOT_FOUND",
+          payload: [],
+        };
+      }
+      
+      return dispatch({
+        type: "GET_BY_NAME",
+        payload: response.data,
+      });
+    } catch (error) {
+      alert("no existe pokemon con ese nombre", error.message);
+      throw error;
+    }
   };
 }
 
-export function getDetails(id) {
+// export function getDetails(id) {
+//   return async function (dispatch) {
+//     const response = await axios(`http://localhost:3001/pokemons/${id}`);
+//     return dispatch({
+//       type: "GET_DETAILS",
+//       payload: response.data,
+//     });
+//   };
+// }
+
+export function getDetails(id, setIsIdValid) {
   return async function (dispatch) {
-    const response = await axios(`http://localhost:3001/pokemons/${id}`);
-    return dispatch({
-      type: "GET_DETAILS",
-      payload: response.data,
-    });
+    try {
+      const response = await axios(`http://localhost:3001/pokemons/${id}`);
+      dispatch({
+        type: "GET_DETAILS",
+        payload: response.data,
+      });
+      setIsIdValid(true); // La ID es válida, actualizar el estado
+    } catch (error) {
+      setIsIdValid(false); // La ID no es válida, actualizar el estado
+    }
   };
 }
+
+
 
 export const cleanDetails = () => {
   return { type: CLEAN_DETAILS };
@@ -72,4 +112,5 @@ export const filterPokemon = (filterName) => {
 export const  clearSearch = () => {
   return {type: CLEAR_SEARCH}
 }
+
 

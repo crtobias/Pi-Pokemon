@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 //los handel son traidas del componente home para el render en busqueda y filtrado
 function Navbar({ handleChange, handleSubmit, setPage, handleClear }) {
   return (
-    <div className="nav-bar">
-      <form onChange={handleChange}>
+    <div class="nav-bars">
+      <form class="searchabrnashe" onChange={handleChange}>
           <input placeholder="Busqueda" type="search" className="input-search" />
-          <button type="submit" onClick={handleSubmit} className="button">
+          <button type="submit" onClick={handleSubmit} class="buttonss">
             BUSCAR
           </button>
       </form>

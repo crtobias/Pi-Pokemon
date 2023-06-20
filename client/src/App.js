@@ -17,7 +17,7 @@ function App() {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		dispatch(getTypes());  //llamada de los tipos
+		dispatch(getTypes());  //llamada de los tipos al iniciar la app
 	}, []); //array de dependencia
 
 
@@ -32,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+

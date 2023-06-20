@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
       const apiSearchByName = [{
         id: response.id,
         name: response.name,
-        img: response.sprites.other.dream_world.front_default,
+        img: response.sprites.front_default,
         types: response.types.map(t => {
           return { name: t.type.name };
         })

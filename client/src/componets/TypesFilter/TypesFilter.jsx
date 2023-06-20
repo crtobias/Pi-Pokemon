@@ -20,7 +20,11 @@ const TypesFilter = ({ setPage }) => {
   };
 
   return (
-    <div className='type-container'>
+
+    <div>
+      <h2 className='filtersxd'>Filters</h2>
+      <div  className='type-container'>
+
       <button onClick={() =>
         handleFilter("all")}
         className='button-type'>
@@ -28,18 +32,20 @@ const TypesFilter = ({ setPage }) => {
       </button>
       {types?.map((t, i) => (
         <button
-          key={i}
-          onClick={() =>
-            filter === t.name ? handleFilter("all") : handleFilter(t.name)}
-
+        key={i}
+        onClick={() =>
+          filter === t.name ? handleFilter("all") : handleFilter(t.name)}
+          
           className='button-type'
-        >
+          >
           {t.name.toUpperCase()}
         </button>
       ))}
+      </div>
 
     </div>
   )
 }
 
 export default TypesFilter
+

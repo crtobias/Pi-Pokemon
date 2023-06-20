@@ -20,27 +20,27 @@ module.exports = (sequelize) => {
     },
     health: {
       type: DataTypes.INTEGER,
-      defaultValue: 100,
+      defaultValue: 1,
     },
     attack: {
       type: DataTypes.INTEGER,
-      defaultValue: 50,
+      defaultValue: 1,
     },
     defense: {
       type: DataTypes.INTEGER,
-      defaultValue: 50
+      defaultValue: 1
     },
     speed: {
       type: DataTypes.INTEGER,
-      defaultValue: 50
+      defaultValue: 1
     },
     height: {
       type: DataTypes.INTEGER,
-      defaultValue: 10
+      defaultValue: 1
     },
     weight: {
       type: DataTypes.INTEGER,
-      defaultValue: 100
+      defaultValue: 1
     }
   }, { timestamps: false });
 };

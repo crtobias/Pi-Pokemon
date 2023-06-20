@@ -6,7 +6,7 @@ function Card({ pokemon }) {
   const { id, name, img, attack, types } = pokemon;
 
   return (
-    <div className="card-container">
+    <div class="card-container">
       <Link to={`/details/${id}`}>
         <div className="info">
           <h2>{name.toUpperCase()}</h2> 
@@ -18,8 +18,8 @@ function Card({ pokemon }) {
               .join(", ")}
           </h2>
         </div>
-        <div className="image">
-          <img src={img} alt="imagenpoke" />
+        <div >
+          <img class="imgcard" src={img} alt="imagenpoke" />
         </div>
       </Link>
     </div>

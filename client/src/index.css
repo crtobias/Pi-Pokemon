@@ -3,6 +3,7 @@ body {
   font-family: 'Pixel', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(74, 69, 64);
 }
 
 code {

@@ -9,7 +9,6 @@ const LandingPage = () => {
             <Link
                 to="/home">
                     <div class="landing" >
-
                     </div>
 
             </Link>
