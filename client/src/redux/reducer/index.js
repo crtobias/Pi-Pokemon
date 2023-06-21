@@ -11,7 +11,7 @@ import {
   TYPE_FILTER,
   FILTER_POKEMON,
   CLEAR_SEARCH,
-  FILTER_BY_ORIGIN
+  FILTER_BY_ORIGIN,
 } from "../actions";
 
 let initialState = {
@@ -23,6 +23,7 @@ let initialState = {
   filter: "all",
   pokemonOrder:[],
   originFilter: "all",
+  
 };
 
 function rootReducer(state = initialState, action) {
@@ -51,7 +52,7 @@ function rootReducer(state = initialState, action) {
       return { ...state, details: {} };
 
     case GET_TYPES:
-      return { ...state, types: action.payload.slice(0, 20) };  //agarra los tipos y los guarda en initialstate de types
+      return { ...state, types: action.payload.slice(0, 20) };  
 
     case TYPE_FILTER:
       if (action.payload === "all") {
@@ -125,6 +126,7 @@ function rootReducer(state = initialState, action) {
         originFilter: selectedOrigin,
         allPokemons: filterPokemons,
       };
+
 
     default:
       return state;

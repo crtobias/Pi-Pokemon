@@ -26,15 +26,15 @@ const Pagination = ({ handlePage, page, perpage }) => {
   return (
     <div >
       {page > 0 && (
-        <button onClick={() => handlePage(page - 1)} className="button-pagination">&#9664;</button>
+        <button onClick={() => handlePage(page - 1)} class="buttonpag">&#9664;</button>
       )}
       {paginate.map((p) => (
-        <button key={p} onClick={() => handlePage(p)} className="button-pagination">
+        <button key={p} onClick={() => handlePage(p)} class="buttonpag">
           {p + 1}
         </button>
       ))}
       {page < paginate.length -1 && (
-        <button onClick={() => handlePage(page + 1)} className="button-pagination">&#9654;</button>
+        <button onClick={() => handlePage(page + 1)} class="buttonpag">&#9654;</button>
       )}
     </div>
   );

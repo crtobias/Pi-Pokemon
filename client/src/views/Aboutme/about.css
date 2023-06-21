@@ -1,0 +1,32 @@
+.about{
+    background-image: url("../../assets/abouttt.png");
+    height: 638px;
+    width: 957px;
+    margin-top: 6rem;
+    margin-left: 27rem;
+    position: relative;
+}
+
+.aboutname{
+    position: absolute;
+    scale: 3;
+    margin-top: 12rem;
+    margin-left: 18rem;
+}
+
+.aboutboton{
+    position: absolute;
+}
+.aboutgit{
+    position: absolute;
+    scale: 2;
+    margin-top: 21rem;
+    margin-left: 12rem;
+}
+
+.aboutlink{
+    position: absolute;
+    scale: 2;
+    margin-left: 12rem;
+    margin-top: 26rem;
+}

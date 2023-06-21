@@ -1,3 +1,5 @@
+
+
 import React from "react";
 
 export default function validationPoke(input) {
@@ -25,6 +27,9 @@ export default function validationPoke(input) {
   }
   if(!input.types.length){
     errors.types = "Select at least one type"
+  }
+  if (input.img && !/^https?:\/\/\S+$/.test(input.img)) {
+    errors.img = "Invalid image URL";
   }
   return errors;
 }

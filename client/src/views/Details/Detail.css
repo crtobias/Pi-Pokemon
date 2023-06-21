@@ -1,79 +1,81 @@
-.detail-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 8%;
-}
-
-.container-detail {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(0, 0, 0);
-    padding: 2%;
-    width: 40%;
-    text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-}
-
-.poke-img {
-    width: 50%;
-    position: absolute;
-    z-index: 0;
-    filter: blur(3px);
-    
-}
-
-.container-detail:hover .poke-img {
-    filter: blur(0px);
-}
-.container-detail:hover {
-    background-color: rgba(255, 255, 255, 0.12);
-}
-
-
-.type-name {
-    display: flex;
-    gap: 5px;
-}
-
-.details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.poke-name {
-    font-size: 35px;
-}
-
-.to-home {
-    background-color: transparent;
-    border-radius: 5px;
-    border-color: rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-    padding: 5px;
-    margin: 3px;
-    width: 100px;
-}
-
-.to-home:hover {
-    cursor: pointer;
-    color: white;
-    background-color: rgba(255,216,10,1);
-    border-color: white;
-}
-
-.info-poke {
-    display: flex;
-    flex-direction: column;
+.todo{
+    background-image: url('../../assets/sasdasddeta.png');
+    height: 576px;
+    width: 824px;
+    margin-left: 26vw;
     margin-top: 50px;
-    z-index: 2;
-    font-size: 100px;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.33);
+    margin-right: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.todoimage{
+    scale: 3;
+    margin-left: 550px;
+    margin-top: 200px;
+    position: absolute;
+    
+    max-width: 100px;
+    max-height: 100px;
+}
+.todoname{
+    scale: 2;
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.tododetails{
+    margin-left: 120px;
+    scale: 1.5;
+    position: absolute;
+    margin-top: 300px;
+}
+
+.todotype{
+    position: absolute;
+    margin-left: 270px;
+    margin-top: 90px;
+}
+.todoboton{
+    position:absolute;
+    height: 100px;
+    background-color: transparent;
+    width: 300px;
+    border: 1px 1px 1pc transparent;
+    border-style: thin;
+    filter: grayscale(50%);
+    background-image: url("../../assets/botonbacj.png");
+}
+
+
+.errorid{
+    position: relative;
+}
+
+.errorida{
+    position: absolute;
+    scale: 3;
+    margin-top: 25rem;
+    margin-left: 50rem;
+}
+
+.todoboton2{
+    filter: grayscale(50%);
+    margin-top: 13rem;
+    margin-left: 50rem;
+    position:absolute;
+    height: 100px;
+    background-color: transparent;
+    width: 300px;
+    border: 1px 1px 1pc transparent;
+    border-style: thin;
+    background-image: url("../../assets/botonbacj.png");
+}
+.todoboton2:hover{
+    filter: grayscale(0%);
+}
+
+.todoboton:hover{
+    filter: grayscale(0%);
 }

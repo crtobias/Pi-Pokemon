@@ -21,15 +21,7 @@ export function getPokemons() {
   };
 }
 
-// export function getByname(name) {
-//   return async function (dispatch) {
-//     const response = await axios(`http://localhost:3001/pokemons?name=${name}`); //respuesta del llamado a la api por nombre
-//     return dispatch({
-//       type: "GET_BY_NAME", // el tipo GET
-//       payload: response.data, //repuesta del llamado todo los POKEMON
-//     });
-//   };
-// }
+
 export function getByname(name) {
   return async function (dispatch) {
     try {
@@ -53,15 +45,6 @@ export function getByname(name) {
   };
 }
 
-// export function getDetails(id) {
-//   return async function (dispatch) {
-//     const response = await axios(`http://localhost:3001/pokemons/${id}`);
-//     return dispatch({
-//       type: "GET_DETAILS",
-//       payload: response.data,
-//     });
-//   };
-// }
 
 export function getDetails(id, setIsIdValid) {
   return async function (dispatch) {

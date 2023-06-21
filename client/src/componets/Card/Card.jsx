@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 
 function Card({ pokemon }) {
-  const { id, name, img, attack, types } = pokemon;
+  const { id, name, img,  types,  } = pokemon;
 
   return (
     <div class="card-container">
@@ -22,6 +22,7 @@ function Card({ pokemon }) {
           <img class="imgcard" src={img} alt="imagenpoke" />
         </div>
       </Link>
+
     </div>
   );
 }

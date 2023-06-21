@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
       const apiSearchByName = [{
         id: response.id,
         name: response.name,
-        img: response.sprites.front_default,
+        img: response.sprites.versions['generation-v']['black-white'].animated['front_default'],
         types: response.types.map(t => {
           return { name: t.type.name };
         })
@@ -48,30 +48,34 @@ module.exports = async (req, res) => {
     }
   } else {
     try {
-      ////API
-      //Llamado de axios para traer los primeros 40 pokemons con sus urls
+      
+
+
+      //Llamado de axios para traer los primeros 151 pokemons con sus urls
       const firstResponse = (await axios('https://pokeapi.co/api/v2/pokemon?limit=151')).data.results;
-      //Mapeo de 'firstResponse' para obtener un array con solamente las 40 urls
+      //Mapeo de 'firstResponse' para obtener un array con solamente las 151 urls
       const urls = firstResponse.map(p => p.url);
-      //Mapeo de 'urls' para obtener un arreglo con las 40 promesas sin resolver
+      //Mapeo de 'urls' para obtener un arreglo con las 151 promesas sin resolver
       const promises = urls.map(url => axios(url));
-      //Resolución de las 40 promesas en simultaneo usando Promise All
+      //Resolución de las 151 promesas en simultaneo usando Promise All
       const allRespones = await Promise.all(promises);
-      //Formateo de allResponses para obtener array con los 40 pokemons y las propiedades de la ruta principal
+      //Formateo de allResponses para obtener array con los 151 pokemons y las propiedades de la ruta principal
       const apiPokemons = allRespones.map(r => {
         return {
           id: r.data.id,
           name: r.data.name,
-          img: r.data.sprites.front_default,
+          img: r.data.sprites.versions['generation-v']['black-white'].animated['front_default'],
           attack: r.data.stats.find(s => s.stat.name === 'attack').base_stat,
+          defensa: r.data.stats.find(s => s.stat.name === 'defense').base_stat,
           types: r.data.types.map(t => {
             return { name: t.type.name };
           })
         };
       });
 
-      ////DB
-      //Invoco el método 'findAll' del modelo 'Pokemon' para traer los pokemon de mi base de datos junto con los tipos relacionados desde el modelo 'Type'. Defino los atributos a traer para según la ruta principal
+
+
+     
       const dbPokemons = await Pokemon.findAll({
         attributes: ['id', 'name', 'img', "attack"],
         include: [{
@@ -83,8 +87,7 @@ module.exports = async (req, res) => {
         }]
       });
 
-      ////ALL
-      //Concateno los pokemons traidos de la base de datos con los traidos de la api
+      
       const allPokemons = [...dbPokemons, ...apiPokemons];
     
 

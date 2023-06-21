@@ -21,3 +21,25 @@ body{
     position: absolute;
 }
 
+.aboutbot{
+    position: absolute;
+    background-image: url("../../assets/botonab.png");
+    height: 200px; width: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-top: -7rem;
+    margin-left: 36rem;
+
+}
+
+.textboto{
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 5rem;
+    color: black;
+    scale: 1.5;
+}
+
+.aboutbot:hover .textboto{
+color: white;
+}

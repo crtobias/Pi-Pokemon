@@ -2,7 +2,7 @@ const { Type } = require('../db');
 
 const dbsource = async (req, res) => {
   try {
-    //Invoco el método 'findAll' del modelo 'Type' para traer todos los tipos desde la base de datos
+
     const allTypes = await Type.findAll();
    
     res.status(200).json(allTypes);

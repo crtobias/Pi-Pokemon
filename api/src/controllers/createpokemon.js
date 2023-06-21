@@ -1,19 +1,27 @@
-const {Pokemon} = require("../db");
+const { Pokemon } = require("../db");
 
-module.exports = async (req, res) =>{
-    try{
-        //Uso el método 'create' del modelo 'Pokemon' para crear una nueva entidad pasando el body como argumento
-        const newPokemon = await Pokemon.create(req.body);
-        console.log(req.body)
-        //Uso el método 'setTypes' del modelo 'Pokemon' para pasarle las foreign keys por body y establecer relación con el modelo 'Type'
-        await newPokemon.setTypes(req.body.types);
-        
+module.exports = async (req, res) => {
+  try {
 
-        res.status(201).json({
-            message: 'Pokemon successfully created',
-            new_pokemon: newPokemon
-          });
-    }   catch (error) {
-        res.status(400).json({ error: error.message });
-    }
+    const { name, health, speed, defense, attack, height, weight, types, img } = req.body;
+    const newPokemon = await Pokemon.create({
+      name,
+      health,
+      speed,
+      defense,
+      attack,
+      height,
+      weight,
+      img, 
+    });
+    
+    await newPokemon.setTypes(types);
+
+    res.status(201).json({
+      message: 'Pokemon successfully created',
+      new_pokemon: newPokemon,
+    });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };

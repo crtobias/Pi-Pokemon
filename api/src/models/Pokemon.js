@@ -15,8 +15,9 @@ module.exports = (sequelize) => {
       unique: false
     },
     img: {
+      defaultValue: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/578.gif',
       type: DataTypes.STRING,
-      defaultValue: 'https://es-static.z-dn.net/files/dc9/78ac3c106941398a18ca7ef16ff38d39.png'
+      allowNull:true,
     },
     health: {
       type: DataTypes.INTEGER,
