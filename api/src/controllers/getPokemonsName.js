@@ -5,10 +5,8 @@ const axios = require('axios');
 module.exports = async (req, res) => {
   
   if (req.query.name) {
-    //Destructuro 'name' de 'req.query' y lo asigno en minúscula para que  la búsqueda sea 'case insensitive'
     const name = req.query.name.toLowerCase();
     try {
-      //Empleo el método 'findAll' junto con el operador 'Op.like' de sequelize para buscar por nombre en base de datos y defino los atributos y relaciones con el modelo 'Type' para que la búsqueda coincida con el requerimiento del front
       const dbSearchByName = await Pokemon.findAll({
         attributes: ['id', 'img', 'name'],
         include: [{

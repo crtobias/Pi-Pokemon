@@ -5,7 +5,7 @@ const axios = require('axios');
 const isUUID = require ('../utils/isUUID')
 
 module.exports = async (req, res) => {
-  const { id } = req.params;
+  const  {id}  =  req.params;
 
   try {
     if (isUUID(id)) {
